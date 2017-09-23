@@ -81,7 +81,7 @@ class ImageTable extends Component {
           scroll={{ x: 1200 }}
           pagination={false}
           loading={loading}
-          rowKey="name"
+          rowKey="id"
           expandedRowRender={expandedRowRender}
           dataSource={data}
           columns={columns}
