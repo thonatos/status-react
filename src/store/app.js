@@ -23,6 +23,10 @@ class State {
       name: 'Clusters',
       href: '/clusters',
     },
+    {
+      name: 'Trends',
+      href: '/trends',
+    },
   ]
 
   constructor(root) {

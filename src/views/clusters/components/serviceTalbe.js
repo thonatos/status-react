@@ -2,19 +2,21 @@ import React from 'react'
 import { Table, Tag } from 'antd'
 import moment from 'moment'
 
-const TAG_COLORS = [ '', '#87d068', '#2db7f5', '#f50', '#108ee9', 'orange' ]
+const TAG_COLORS = ['', '#87d068', '#2db7f5', '#f50', '#108ee9', 'orange']
 
-const firstUpperCase = ([ first, ...rest ]) => first.toUpperCase() + rest.join('')
+const firstUpperCase = ([first, ...rest]) => first.toUpperCase() + rest.join('')
 
 const expandedRowRender = ({ containers, definition }) => {
   const keys = Object.keys(containers)
-  const { image } = definition;
+  const { image } = definition
   return (
     <div>
-      <Tag>{image}</Tag>
+      <Tag>
+        {image}
+      </Tag>
       <ul>
         {keys.map(k => {
-          const { name, ip, health, status, vm_id, fail_count } = containers[ k ]
+          const { name, ip, health, status, vm_id, fail_count } = containers[k]
           const tags = {
             name,
             status,
@@ -28,9 +30,9 @@ const expandedRowRender = ({ containers, definition }) => {
               <div>
                 {Object.keys(tags).map((k, i) => {
                   const name = firstUpperCase(k)
-                  const record = tags[ k ]
+                  const record = tags[k]
                   return (
-                    <Tag color={TAG_COLORS[ i ]} key={i}>
+                    <Tag color={TAG_COLORS[i]} key={i}>
                       {name}: {record}
                     </Tag>
                   )
@@ -47,27 +49,27 @@ const expandedRowRender = ({ containers, definition }) => {
 const ServiceTable = ({ title, data, loading, langs }) => {
   const columns = [
     {
-      title: langs[ 'service_name' ],
+      title: langs['service_name'],
       dataIndex: 'name',
       key: 'name',
     },
     {
-      title: langs[ 'service_project' ],
+      title: langs['service_project'],
       dataIndex: 'project',
       key: 'project',
     },
     {
-      title: langs[ 'service_desired_state' ],
+      title: langs['service_desired_state'],
       dataIndex: 'desired_state',
       key: 'desired_state',
     },
     {
-      title: langs[ 'service_current_state' ],
+      title: langs['service_current_state'],
       dataIndex: 'current_state',
       key: 'current_state',
     },
     {
-      title: langs[ 'service_updated' ],
+      title: langs['service_updated'],
       dataIndex: 'updated',
       key: 'updated',
       render: text => {
@@ -86,9 +88,9 @@ const ServiceTable = ({ title, data, loading, langs }) => {
       title={
         title
           ? () =>
-            <p>
-              {langs[ title ]}
-            </p>
+              <p>
+                {langs[title]}
+              </p>
           : null
       }
       style={{ marginBottom: '1em' }}

@@ -6,7 +6,7 @@ import { observer, inject } from 'mobx-react'
 
 import './App.css'
 import RootStore from '~/store/root'
-import { Home, Clusters, Images, NoMatch } from '~/container/'
+import { Home, Clusters, Images, Trends, NoMatch } from '~/container/'
 
 const rootStore = new RootStore()
 
@@ -22,6 +22,7 @@ class Wrap extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/images" component={Images} />
+              <Route path="/trends" component={Trends} />
               <Route path="/clusters" component={Clusters} />
               <Route component={NoMatch} />
             </Switch>

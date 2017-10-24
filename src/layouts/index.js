@@ -1,3 +1,4 @@
 import Base from './base'
+import Full from './full'
 
-export { Base }
+export { Base, Full }
